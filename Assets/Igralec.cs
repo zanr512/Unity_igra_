@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Igralec : MonoBehaviour {
 
@@ -28,14 +29,19 @@ public class Igralec : MonoBehaviour {
             Debug.Log(misPoz2D.ToString());
             RaycastHit2D hit = Physics2D.Raycast(misPoz2D, dir);
             */
-            rigid.velocity = new Vector2(7, 7);
+            rigid.velocity = new Vector2(7, 8);
             dotik = false;
         }
-        else if(dotik)
+
+
+        if(dotik)
         {
-            rigid.velocity = new Vector2(7, 0);
+            rigid.velocity = new Vector2(9, -7);
         }
-            
+
+
+        if (transform.position.y < -7)
+            SceneManager.LoadScene("zacetniLvl");
 
 
 
@@ -44,8 +50,11 @@ public class Igralec : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log("nastavim true");
-        dotik = true;
+        //Debug.Log("nastavim true");
+        if(coll.transform.tag == "tla")
+            dotik = true;
+        else if(coll.transform.tag == "ovira")
+            SceneManager.LoadScene("zacetniLvl");
     }
 
 }
