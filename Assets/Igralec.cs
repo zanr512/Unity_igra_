@@ -31,10 +31,7 @@ public class Igralec : MonoBehaviour {
             */
             rigid.velocity = new Vector2(7, 8);
             dotik = false;
-        }
-
-
-        if(dotik)
+        }else if(dotik)
         {
             rigid.velocity = new Vector2(9, -7);
         }

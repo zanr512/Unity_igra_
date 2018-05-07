@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/Zan/Documents/test/test.apk
+C:/Users/Zan/Desktop/projekt/test/test.apk
 SceneListBegin?
 Assets/Scenes/zacetniLvl.unity
 SceneListEnd?
