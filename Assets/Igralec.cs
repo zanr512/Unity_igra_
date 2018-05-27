@@ -9,6 +9,8 @@ public class Igralec : MonoBehaviour {
 
     private Rigidbody2D rigid;
 
+    public AudioSource skok;
+
     public int hitrost;
 
     public Canvas c;
@@ -41,6 +43,12 @@ public class Igralec : MonoBehaviour {
         //SKOČI
         if ((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true )
         {
+
+
+            skok.Play();
+
+
+
             dotik = false;
             rigid.AddForce(new Vector2(0, 12), ForceMode2D.Impulse);
             //rigidbody2D.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
@@ -58,7 +66,7 @@ public class Igralec : MonoBehaviour {
         if(!dotik)
         {
             Vector3 vel = rigid.velocity;
-            vel.y -= 12f * Time.deltaTime;
+            vel.y -= 13f * Time.deltaTime;
             rigid.velocity = vel;
         }
 
