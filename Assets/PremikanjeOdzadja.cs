@@ -41,13 +41,13 @@ public class PremikanjeOdzadja : MonoBehaviour {
 
         //test.transform.localPosition = new Vector3(0, 0, 1);
 
-        if (PlayerPrefs.GetInt("senzorD") == 1)
-        {
-            test.SetActive(true);
-            prikaziSenzorje();
-        }
-        else
-            test.SetActive(false);
+        //if (PlayerPrefs.GetInt("senzorD") == 1)
+        //{
+        //    test.SetActive(true);
+        //    prikaziSenzorje();
+        //}
+        //else
+        //    test.SetActive(false);
 
     }
 
