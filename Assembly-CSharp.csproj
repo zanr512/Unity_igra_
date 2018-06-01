@@ -51,9 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\glavniMeniSkripta.cs" />
      <Compile Include="Assets\Igralec.cs" />
      <Compile Include="Assets\PremikanjeOdzadja.cs" />
+     <Compile Include="Assets\quuit.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
@@ -65,14 +65,15 @@
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\skripta.cs" />
      <None Include="Assets\Fonts\Jupiter\LICENSE.txt" />
      <None Include="Assets\Textures and Sprites\SF UI\Background\LICENSE.txt" />
      <None Include="Assets\Materials\UI-Default-No-Alpha.shader" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/Zan/Documents/test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/Zan/Desktop/projektv1/test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/Zan/Documents/test/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/Zan/Desktop/projektv1/test/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -299,6 +300,10 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F130E503-31B6-CD88-696B-20575B7F4CFA}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

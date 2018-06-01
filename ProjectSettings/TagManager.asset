@@ -6,6 +6,8 @@ TagManager:
   tags:
   - tla
   - ovira
+  - Fly
+  - portal
   layers:
   - Default
   - TransparentFX

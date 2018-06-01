@@ -16,8 +16,8 @@ public class Igralec : MonoBehaviour {
     public Canvas c;
     public Text score;
 
+    bool portal = false;
 
-    int premik = 0;
 
     bool dotik = true; //ali se je dotaknil tal
 
@@ -41,7 +41,7 @@ public class Igralec : MonoBehaviour {
 
 
         //SKOČI
-        if ((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true )
+        if ((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true && portal == false)
         {
 
 
@@ -57,19 +57,25 @@ public class Igralec : MonoBehaviour {
         }
 
         //NORMALNO PREMIKANJE
-        if (dotik)
+        if (dotik && !portal)
         {
             rigid.velocity = new Vector2(12, -7);
         }
 
         //PREMIKANJE V ZRAKU
-        if(!dotik)
+        if(!dotik && !portal)
         {
             Vector3 vel = rigid.velocity;
             vel.y -= 13f * Time.deltaTime;
             rigid.velocity = vel;
         }
 
+
+        if(portal)
+        {
+            transform.Translate(0, -Input.acceleration.x, 0);
+            rigid.velocity = new Vector2(12, -7);
+        }
 
         if (transform.position.y < -7)
             pristejPoskus();
@@ -86,6 +92,18 @@ public class Igralec : MonoBehaviour {
             dotik = true;
         else if (coll.transform.tag == "ovira")
             pristejPoskus();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "portal" && !portal)
+        {
+            portal = true;
+        }
+        else if(other.tag == "portal" && portal)
+        {
+            portal = false;
+        }
     }
 
     void pristejPoskus()

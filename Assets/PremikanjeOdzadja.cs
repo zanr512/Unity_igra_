@@ -48,6 +48,8 @@ public class PremikanjeOdzadja : MonoBehaviour {
         //}
         //else
         //    test.SetActive(false);
+        test.SetActive(true);
+        prikaziSenzorje();
 
     }
 
