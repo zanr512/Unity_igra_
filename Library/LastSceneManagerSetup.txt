@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/zacetniLvl.unity
+- path: Assets/Scenes/kreiraj_user.unity
   isLoaded: 1
   isActive: 1

@@ -74,7 +74,7 @@ public class Igralec : MonoBehaviour {
         if(portal)
         {
             transform.Translate(0, -Input.acceleration.x, 0);
-            rigid.velocity = new Vector2(12, -7);
+            rigid.velocity = new Vector2(12, 0);
         }
 
         if (transform.position.y < -7)

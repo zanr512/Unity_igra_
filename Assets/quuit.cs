@@ -12,6 +12,7 @@ public class quuit : MonoBehaviour {
         SceneManager.LoadScene("zacetniLvl");
     }
 
+
     public void izhod()
     {
         Application.Quit();
