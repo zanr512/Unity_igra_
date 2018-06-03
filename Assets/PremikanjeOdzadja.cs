@@ -60,6 +60,6 @@ public class PremikanjeOdzadja : MonoBehaviour {
         z_gyro.text = "Gyro z: " + Input.gyro.userAcceleration.z.ToString();
 
         acc.text = "Acc: " + Input.acceleration.ToString();
-        //y_gyro.text = Input.gyro.attitude.ToString();
+
     }
 }
