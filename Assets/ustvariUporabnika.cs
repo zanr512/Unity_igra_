@@ -13,7 +13,7 @@ public class ustvariUporabnika : MonoBehaviour {
 	void Start () {
 		if(PlayerPrefs.HasKey("name"))
         {
-            SceneManager.LoadScene("glavniMeni");
+            SceneManager.LoadScene("face_detect");
         }
 	}
 	
@@ -27,7 +27,7 @@ public class ustvariUporabnika : MonoBehaviour {
 
         string name = inFi.text;
 
-        var url = "http://localhost:8080/ime/" + name;
+        var url = "http://192.168.1.5:8080/ime/" + name;
 
         var www = new WWW(url);
 
@@ -54,6 +54,7 @@ public class ustvariUporabnika : MonoBehaviour {
             if (res == "ok")
             {
                 PlayerPrefs.SetString("name", ime);
+                SceneManager.LoadScene("face_detect");
             }
             else
             {
