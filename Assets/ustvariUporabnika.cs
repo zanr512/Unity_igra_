@@ -27,7 +27,7 @@ public class ustvariUporabnika : MonoBehaviour {
 
         string name = inFi.text;
 
-        var url = "http://192.168.1.5:8080/ime/" + name;
+        var url = "http://192.168.137.1:8080/ime/" + name;
 
         var www = new WWW(url);
 

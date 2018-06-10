@@ -17,6 +17,7 @@ public class Igralec : MonoBehaviour {
     public Text score;
 
     bool portal = false;
+    bool portalG = false;
 
 
     bool dotik = true; //ali se je dotaknil tal
@@ -41,7 +42,7 @@ public class Igralec : MonoBehaviour {
 
 
         //SKOČI
-        if ((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true && portal == false)
+        if ((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true && portal == false && portalG == false)
         {
 
 
@@ -57,13 +58,13 @@ public class Igralec : MonoBehaviour {
         }
 
         //NORMALNO PREMIKANJE
-        if (dotik && !portal)
+        if (dotik && !portal && !portalG)
         {
             rigid.velocity = new Vector2(12, -7);
         }
 
         //PREMIKANJE V ZRAKU
-        if(!dotik && !portal)
+        if(!dotik && !portal  && !portalG)
         {
             Vector3 vel = rigid.velocity;
             vel.y -= 13f * Time.deltaTime;
@@ -76,6 +77,29 @@ public class Igralec : MonoBehaviour {
             transform.Translate(0, -Input.acceleration.x, 0);
             rigid.velocity = new Vector2(12, 0);
         }
+
+        if (portalG)
+        {
+            if((Input.GetMouseButtonDown(0) || Input.gyro.userAcceleration.y > 0.3) && dotik == true)
+            {
+                skok.Play();
+                dotik= false;
+                rigid.velocity = new Vector2(12, 7);
+                //rigid.AddForce(new Vector2(0, -12), ForceMode2D.Impulse);
+            }
+            if(!dotik)//v zraku
+            {
+                rigid.velocity = new Vector2(12, -7);
+            }
+            if(dotik)//noralno premikanje
+            {
+                rigid.velocity = new Vector2(12, -7);
+            }
+            
+        }
+
+
+
 
         if (transform.position.y < -7)
             pristejPoskus();
@@ -92,6 +116,8 @@ public class Igralec : MonoBehaviour {
             dotik = true;
         else if (coll.transform.tag == "ovira")
             pristejPoskus();
+        else if (coll.transform.tag == "konec")
+            SceneManager.LoadScene("glavniMeni");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -104,6 +130,19 @@ public class Igralec : MonoBehaviour {
         {
             portal = false;
         }
+        else if(other.tag == "portalReverse" && !portalG)
+        {
+            portalG = true;
+            Debug.Log("reverse gravitacija");
+            rigid.gravityScale = 0;
+            rigid.velocity = new Vector2(0, 12);
+        }
+        else if (other.tag == "portalReverse" && portalG)
+        {
+            portalG = false;
+        }
+
+
     }
 
     void pristejPoskus()

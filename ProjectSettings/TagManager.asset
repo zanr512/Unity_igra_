@@ -8,6 +8,8 @@ TagManager:
   - ovira
   - Fly
   - portal
+  - konec
+  - portalReverse
   layers:
   - Default
   - TransparentFX

@@ -8,16 +8,16 @@ using UnityEngine.SceneManagement;
 public class faceDetect : MonoBehaviour {
 
     // Use this for initialization
-    string url = "http://192.168.1.5:8080/upload";
+    string url = "http://192.168.137.1:8080/upload";
     public RawImage tst;
     public Text txt;
     byte[] bytes;
     WebCamTexture tex = null;
     void Start () {
         if(PlayerPrefs.HasKey("ok"))
-            url = "http://192.168.1.5:8080/upload";
+            url = "http://192.168.137.1:8080/upload";
         else
-            url = "http://192.168.1.5:8080/uploadFirst";
+            url = "http://192.168.137.1:8080/uploadFirst";
         string tmp = "";
         WebCamDevice[] devices = WebCamTexture.devices;
         for (int i = 0; i < devices.Length; i++)
