@@ -111,14 +111,22 @@ public class Igralec : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+        string url = "http://" + PlayerPrefs.GetString("url") + ":8080/koncan";
         //Debug.Log("nastavim true");
         if (coll.transform.tag == "tla")
             dotik = true;
         else if (coll.transform.tag == "ovira")
             pristejPoskus();
         else if (coll.transform.tag == "konec")
+        {
             SceneManager.LoadScene("glavniMeni");
+            WWWForm postForm = new WWWForm();
+            postForm.AddField("tst", PlayerPrefs.GetString("name"));
+            postForm.AddField("poskus", PlayerPrefs.GetInt("poskus"));
+            WWW upload = new WWW(url, postForm);
+        }
     }
+            
 
     void OnTriggerEnter2D(Collider2D other)
     {

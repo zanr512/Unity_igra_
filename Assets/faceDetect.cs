@@ -8,16 +8,16 @@ using UnityEngine.SceneManagement;
 public class faceDetect : MonoBehaviour {
 
     // Use this for initialization
-    string url = "http://192.168.137.1:8080/upload";
+    string url;
     public RawImage tst;
     public Text txt;
     byte[] bytes;
     WebCamTexture tex = null;
     void Start () {
         if(PlayerPrefs.HasKey("ok"))
-            url = "http://192.168.137.1:8080/upload";
+            url = "http://" + PlayerPrefs.GetString("url") + ":8080 /upload";
         else
-            url = "http://192.168.137.1:8080/uploadFirst";
+            url = "http://" + PlayerPrefs.GetString("url") + ":8080 /uploadFirst";
         string tmp = "";
         WebCamDevice[] devices = WebCamTexture.devices;
         for (int i = 0; i < devices.Length; i++)
@@ -37,19 +37,14 @@ public class faceDetect : MonoBehaviour {
     public void SaveImage()
     {
         
-        //Create a Texture2D with the size of the rendered image on the screen.
         Texture2D texture = new Texture2D(tst.texture.width, tst.texture.height, TextureFormat.ARGB32, false);
 
-        //Save the image to the Texture2D
         texture.SetPixels(tex.GetPixels());
         texture.Apply();
 
         //Encode it as a PNG.
         bytes = texture.EncodeToPNG();
-        //Debug.Log(Application.dataPath + "/Images/testimg.png");
         tex.Stop();
-        //Save it in a file.
-        //File.WriteAllBytes(Application.dataPath + "/Images/testimg.png", bytes);
         StartCoroutine(UploadFileCo(Application.dataPath + "/Images/testimg.png", url));
     }
 

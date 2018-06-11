@@ -27,7 +27,8 @@ public class ustvariUporabnika : MonoBehaviour {
 
         string name = inFi.text;
 
-        var url = "http://192.168.137.1:8080/ime/" + name;
+       
+        var url = "http://" +  PlayerPrefs.GetString("url") + ":8080/ime/" + name;
 
         var www = new WWW(url);
 

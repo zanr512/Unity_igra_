@@ -2,6 +2,7 @@ Android
 PlayerPath?
 C:/Users/Zan/Desktop/projektv1/test/test.apk
 SceneListBegin?
+Assets/Scenes/ip_naslov.unity
 Assets/Scenes/kreiraj_user.unity
 Assets/Scenes/face_detect.unity
 Assets/Scenes/glavniMeni.unity
@@ -172,3 +173,4 @@ a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAsse
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ApplicationManager
 d82cf883de317a10e46bb75f930faa50 Assembly-CSharp.dll:.PremikanjeOdzadja
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeColor
+3b00cb3c2fb01d69d240da310eb64f35 Assembly-CSharp.dll:.nastaviIp

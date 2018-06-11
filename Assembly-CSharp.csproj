@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\faceDetect.cs" />
      <Compile Include="Assets\Igralec.cs" />
+     <Compile Include="Assets\nastaviIp.cs" />
      <Compile Include="Assets\PremikanjeOdzadja.cs" />
      <Compile Include="Assets\quuit.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
