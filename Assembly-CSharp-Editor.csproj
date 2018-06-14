@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FurBall2D_mobile\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\Editor\DeleteAllPlayerPrefs.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/Zan/Desktop/projektv1/test/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
